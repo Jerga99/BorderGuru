@@ -1,15 +1,21 @@
+var path = require("path");
+var assetPath = path.join(__dirname, ".", "public");
+
+console.log(assetPath);
+
 module.exports = {
+
   entry: [
-    './src/index.js'
+    './client/index.js'
   ],
   output: {
-    path: __dirname,
+    path: assetPath,
     publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
     loaders: [{
-      exclude: /node_modules/,
+      exclude: path.join(__dirname, "..", "node_modules"),
       loader: 'babel'
     },
       {test: /(\.css)$/, loaders: ['style', 'css']},

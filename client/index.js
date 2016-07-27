@@ -3,27 +3,27 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import {Router, Route, IndexRoute, browserHistory} from "react-router";
 
-import App from './components/app';
-import OffersPage from "./components/offers/OffersPage";
+import App from './src/components/app';
+import OffersPage from "./src/components/offers/OffersPage";
 
-import * as actions from "./actions/index";
+import * as actions from "./src/actions/index";
 
 //Auth
-import Signin from "./components/auth/signin";
-import Signout from "./components/auth/signout";
-import Signup from "./components/auth/signup";
+import Signin from "./src/components/auth/signin";
+import Signout from "./src/components/auth/signout";
+import Signup from "./src/components/auth/signup";
 
 //Styles
 
-import './style/vendors/css/Grid.css'
-import './style/vendors/css/normalize.css';
-import "./style/vendors/css/ionicons.min.css";
-import './style/app.scss';
+import './src/style/vendors/css/Grid.css'
+import './src/style/vendors/css/normalize.css';
+import "./src/style/vendors/css/ionicons.min.css";
+import './src/style/app.scss';
 
-import {AUTH_USER} from "./actions/types";
+//import {AUTH_USER} from "./actions/types";
 
 
-var store = require('./reducers/index').configure();
+var store = require('./src/reducers/index').configure();
 
 
 // const token = localStorage.getItem('token');

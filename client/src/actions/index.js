@@ -2,7 +2,10 @@ import axios from "axios";
 import {browserHistory} from "react-router";
 import {types} from "./types";
 
-const ROOT_URL = "http://localhost:3090";
+//const ROOT_URL = "http://localhost:3090";
+
+
+const ROOT_URL= `${process.env.IP}:${process.env.PORT}`;
 
 export const setActiveOffer = (offer) => {
     return {
@@ -35,7 +38,7 @@ export const fetchOffersSuccess = (offers) => {
 export const fetchOffers = () => {
 
     return (dispatch) => {
-        axios.get(ROOT_URL).then(resp => {
+        axios.get(`${ROOT_URL}/offers`).then(resp => {
             return dispatch(fetchOffersSuccess(resp));
         });
     };

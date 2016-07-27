@@ -29,7 +29,9 @@ server.listen(port);
 
 console.log('Server listening on: ', port);
 
-app.get('/', function(req, res) {
+app.use(express.static('../client/public'));
+
+app.get('/offers', function(req, res) {
     Goods.find({}, function(err, allGoods){
         if(err){
             console.log("Error!");
