@@ -3,7 +3,6 @@ import Modal from 'react-modal';
 import * as actions from "../../actions/index";
 import {connect} from "react-redux";
 import { Link } from 'react-router';
-import toastr from "toastr";
 
 class OffersAdd extends React.Component {
     constructor(props){
@@ -38,7 +37,6 @@ class OffersAdd extends React.Component {
         
             dispatch(actions.addOffer(offer));
             this.setState({modalIsOpen: false});
-            toastr.success("Offer Added");
     }
 
 
