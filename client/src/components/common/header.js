@@ -8,6 +8,7 @@ class Header extends Component {
         return (
             <header>
 
+                <h1><span className="title-bold">Border</span>Guru</h1>
 
             </header>
             );

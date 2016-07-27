@@ -1,0 +1,55 @@
+.content{
+  width: 100%;
+  height: 100%;
+
+
+
+  .content-list {
+    margin-top: 40px !important;
+    height: 80%;
+    background: $contentColor;
+  }
+
+  .content-detail {
+    margin-top: 40px !important;
+    height: 80%;
+    background: $contentColor;
+
+    .top-sold ul{
+      list-style: none;
+      color: #c5c5c5;
+    }
+
+    .top-sold h1 {
+      margin-bottom: 5px;
+    }
+
+    .top-sold {
+      margin-bottom: 5px;
+      margin-left: 20px;
+    }
+
+    p{
+     text-align: center;
+      margin-top: 30px;
+      color:white;
+    }
+
+    .content-buttons {
+      margin: 20px;
+    }
+  }
+
+  .filter-content {
+    margin-top: 20px;
+    font-size: 80%;
+    text-align: center;
+    width: 100%;
+  }
+
+  .filter-content span:hover {
+    color: white;
+  }
+
+}
+
