@@ -6,11 +6,10 @@ const router = require("./router");
 const mongoose= require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const secretUrl = require("../secret_variable");
 
 var assetPath = path.join(__dirname, "..", "client/public");
 
-const url  = process.env.MONGO_URL || secretUrl.mongoUrl;
+const url  = process.env.MONGO_URL;
 
 mongoose.connect(url);
 
