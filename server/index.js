@@ -5,8 +5,14 @@ const morgan = require("morgan");
 const router = require("./router");
 const mongoose= require("mongoose");
 const cors = require("cors");
+const path = require("path");
+
+var assetPath = path.join(__dirname, "..", "client/public");
 
 const Goods = require("./models/goods");
+
+console.log(Goods);
+
 
 //DB setup
 //mongoose.connect('mongodb://localhost:auth/auth');
@@ -29,7 +35,7 @@ server.listen(port);
 
 console.log('Server listening on: ', port);
 
-app.use(express.static('../client/public'));
+app.use(express.static(assetPath));
 
 app.get('/offers', function(req, res) {
     Goods.find({}, function(err, allGoods){
