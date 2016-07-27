@@ -2,7 +2,7 @@ import * as redux from 'redux';
 import thunk from "redux-thunk";
 import { reducer as form }  from "redux-form";
 import {authReducer} from "./auth_reducer";
-import {offersReducer, activeOfferRedcer} from "./offers_reducer";
+import {offersReducer, activeOfferReducer} from "./offers_reducer";
 import {searchTextReducer, filterTypeReducer} from "./filter_reducer";
 
 export var configure = (initialState = {}) => {
@@ -13,7 +13,7 @@ export var configure = (initialState = {}) => {
     offers: offersReducer,
     filterType: filterTypeReducer,
     searchText: searchTextReducer,
-    activeOffer: activeOfferRedcer
+    activeOffer: activeOfferReducer
   });
 
   var store = redux.createStore(reducer, initialState,

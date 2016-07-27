@@ -1,7 +1,6 @@
-import React, {PropTypes} from "react";
+import React from "react";
 import {connect} from 'react-redux';
 import  * as actions from '../../actions/index';
-import OffersList from './OffersList';
 import OffersMenu from "./OffersMenu";
 import Offer from "./Offer";
 import OfferFilter from "./OffersFilter";
@@ -19,7 +18,7 @@ class OffersPage extends React.Component {
             activeOffer: {}
         }
     }
-
+    
     renderOffers(offers){
         
         if(offers)
@@ -31,9 +30,7 @@ class OffersPage extends React.Component {
             if(filterType.length === 0) {
                 trueFilterType = types.FILTER_COMPANY;
             }
-
-
-
+            
             var filteredOffers = filterAlg.filterOffers(offers, trueFilterType, searchText);
 
             return filteredOffers.map((offer) => {
@@ -54,19 +51,13 @@ class OffersPage extends React.Component {
         if(offers.data) {
         var mostOrderedItems = filterAlg.filterOffersByOrdes(offers.data);}
 
-        console.log(mostOrderedItems);
-
-        console.log("ACTIVE OFFER: ", this.state.activeOffer);
-
         return(
         <section className="main-view">
            <div className="row">
                <div className="main-box">
 
                    <OffersMenu/>
-
                    <div className="content">
-
                        <div className="content-list col span-1-of-2">
 
                            <OfferFilter/>
@@ -88,10 +79,8 @@ class OffersPage extends React.Component {
                            
                        </div>
 
-                       <div className="content-detail col span-1-of-2">
-
+                        <div className="content-detail col span-1-of-2">
                             <OfferDetail offers = {mostOrderedItems}/>
-
                        </div>
                    </div>
                </div>

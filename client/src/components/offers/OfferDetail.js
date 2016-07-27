@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
+import uuid from "uuid";
 
 import * as actions from "../../actions/index";
 
@@ -12,7 +13,6 @@ class OfferDetail extends React.Component {
 
         return () => {
             const {dispatch} = this.props;
-            console.log("AAA");
             dispatch(actions.deleteOffers(id));
             dispatch(actions.setActiveOffer({}));
         }
@@ -46,7 +46,7 @@ class OfferDetail extends React.Component {
         if(offers){
             return offers.map((offer) => {
 
-                return <li>{offer.product} , {offer.count}</li>
+                return <li key={uuid.v1()}>{offer.product} , {offer.count}</li>
             });
         } else {
             return <li>Loading...</li>

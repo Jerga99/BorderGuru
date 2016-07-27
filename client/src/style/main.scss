@@ -29,25 +29,7 @@ body {
   visibility:  hidden;
 }
 
-.content h2:after {
-  display: block;
-  height: 2px;
-  background-color: white;
-  content: " ";
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 10px;
-}
 
-h2:after {
-  display: block;
-  height: 2px;
-  background-color: white;
-  content: " ";
-  width: 100px;
-  margin: 0 auto;
-  margin-top: 10px;
-}
 
 .row {
   max-width: 1140px;

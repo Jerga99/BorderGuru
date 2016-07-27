@@ -9,10 +9,13 @@ const filterByType = (filteredOffers, filteredType, searchText) => {
         var text = offer[filteredType].toLowerCase();
         return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
     });
+
     return offersToReturn;
 }
 
 const countOccurences = (items) => {
+
+    var maxOccurenceNum;
 
     if(items.length == 0)
         return null;
@@ -20,6 +23,7 @@ const countOccurences = (items) => {
     var maxEl = items[0], maxCount = 1;
     for(var i = 0; i < items.length; i++)
     {
+
         var el = items[i];
         if(modeMap[el] == null)
             modeMap[el] = 1;
@@ -32,7 +36,7 @@ const countOccurences = (items) => {
         }
     }
     return {
-        product: el,
+        product: maxEl,
         count: maxCount
     };
 }
@@ -54,9 +58,6 @@ const countOccurences = (items) => {
 
         return mostSoldItems;
 }
-
-
-
 
 module.exports = {
 

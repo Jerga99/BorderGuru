@@ -6,18 +6,13 @@ const router = require("./router");
 const mongoose= require("mongoose");
 const cors = require("cors");
 const path = require("path");
+const secretUrl = require("../secret_variable");
 
 var assetPath = path.join(__dirname, "..", "client/public");
 
-const Goods = require("./models/goods");
+const url  = process.env.MONGO_URL || secretUrl.mongoUrl;
 
-console.log(Goods);
-
-
-//DB setup
-//mongoose.connect('mongodb://localhost:auth/auth');
-
-mongoose.connect("mongodb://filip99:samsung2580@ds029705.mlab.com:29705/borderguru");
+mongoose.connect(url);
 
 const app = express();
 
@@ -37,32 +32,4 @@ console.log('Server listening on: ', port);
 
 app.use(express.static(assetPath));
 
-app.get('/offers', function(req, res) {
-    Goods.find({}, function(err, allGoods){
-        if(err){
-            console.log("Error!");
-            console.log(err);
-        }else{
-            res.send(allGoods);
-        }
-    });
-});
 
-app.delete("/:id", function(req, res){
-
-    Goods.findByIdAndRemove(req.params.id, function(err){
-        if(err){
-            console.log(err);
-            throw err;
-        } else{
-            Goods.find({}, function(err, allGoods){
-                if(err){
-                    console.log("Error!");
-                    console.log(err);
-                }else{
-                    res.send(allGoods);
-                }
-            });
-        }
-    });
-});

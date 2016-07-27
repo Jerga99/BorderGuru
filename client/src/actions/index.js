@@ -1,11 +1,5 @@
 import axios from "axios";
-import {browserHistory} from "react-router";
 import {types} from "./types";
-
-//const ROOT_URL = "http://localhost:3090";
-
-
-const ROOT_URL= `${process.env.IP}:${process.env.PORT}`;
 
 export const setActiveOffer = (offer) => {
     return {
@@ -35,10 +29,26 @@ export const fetchOffersSuccess = (offers) => {
     };
 };
 
+export const addOfferSuccess = (offer) => {
+    return {
+        type: types.ADD_OFFER,
+        offer
+    };
+};
+
+export const addOffer = (offer) => {
+
+    return (dispatch) => {
+        axios.post(`/add`, offer).then((resp) => {
+            return dispatch(addOfferSuccess(offer));
+        });
+        };
+    };
+
 export const fetchOffers = () => {
 
     return (dispatch) => {
-        axios.get(`${ROOT_URL}/offers`).then(resp => {
+        axios.get(`/offers`).then(resp => {
             return dispatch(fetchOffersSuccess(resp));
         });
     };
@@ -47,7 +57,7 @@ export const fetchOffers = () => {
 export const deleteOffers = (id) => {
 
     return (dispatch) => {
-        axios.delete(`${ROOT_URL}/${id}`).then(resp => {
+        axios.delete(`/${id}`).then(resp => {
             return dispatch(fetchOffersSuccess(resp));
         });
     };

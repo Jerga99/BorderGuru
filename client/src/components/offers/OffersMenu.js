@@ -1,5 +1,6 @@
-import React, {PropTypes} from "react";
+import React from "react";
 import OfferSearch from "./OfferSearch";
+import OffersAdd from "./OffersAdd";
 
 class OffersMenu extends React.Component {
 
@@ -9,10 +10,8 @@ class OffersMenu extends React.Component {
         <div className="top-menu">
             <ul className="top-buttons">
                 <li>SHOW_ALL</li>
-                <li>ADD_OFFER</li>
-                <li>TOP_ORDERED</li>
+                <OffersAdd/> 
             </ul>
-
            <OfferSearch/>
         </div>);
     }
