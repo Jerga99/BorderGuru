@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "babel": "babel --presets es2015,stage-0 --ignore node_modules,./client/public",
-    "start": "node ./client/index.js",
+    "start": "npm run build:node",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
-    "build": "npm run build:dev && npm run build:node",
+    "build": "npm run build:dev",
     "build:node": "node ./server/index.js ",
     "build:dev" :" webpack --colors --config ./client/webpack.config.js",
     "dev": "node ./client/server.js ",
