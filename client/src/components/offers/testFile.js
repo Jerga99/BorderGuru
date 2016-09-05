@@ -8,8 +8,15 @@ class TestFile extends React.Component {
 
         render(){
             return(
+<<<<<<< HEAD
               <div> Just Testing File! </div>
 
+=======
+              <div> Just Testing File!
+                Going to do recursive merge!!!
+                Doing changes in Master!!!
+               </div>
+>>>>>>> iss53
             )
         }
 }
