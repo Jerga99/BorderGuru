@@ -9,8 +9,13 @@ class TestFile extends React.Component {
         render(){
             return(
               <div> Just Testing File! </div>
+
             )
         }
+}
+
+function test(){
+  console.log("No conflicting change in master!!!");
 }
 
 export default TestFile;
